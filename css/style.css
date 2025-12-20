@@ -1,0 +1,265 @@
+
+  /* =========================
+     GLOBAL STYLES
+     ========================= */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a { text-decoration: none; }
+
+  /* =========================
+     HERO SECTION
+     ========================= */
+  .hero {
+    width: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero img {
+    width: 400px;
+    max-width: 80%;
+    animation: logoPop 1s forwards, logoGlow 2s infinite alternate;
+  }
+
+  .hero .tagline {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: taglinePop 1s forwards;
+    animation-delay: 1s;
+  }
+
+  @keyframes logoGlow {
+    0% { filter: drop-shadow(0 0 0px rgba(255,255,255,0.5)); }
+    50% { filter: drop-shadow(0 0 20px rgba(255,255,255,0.8)); }
+    100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.6)); }
+  }
+
+  @keyframes logoPop {
+    0% { opacity: 0; transform: scale(0.5); }
+    60% { opacity: 1; transform: scale(1.1); }
+    80% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes taglinePop {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* =========================
+     SERVICES SECTION
+     ========================= */
+  .services {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 4rem 2rem;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .services-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+  }
+
+  .service-box {
+    flex: 1 1 45%;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+
+  .service-box:hover { transform: scale(1.05); }
+
+  .service-box .overlay {
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .service-box h2 { margin:0; font-size:1.5rem; }
+  .service-box p { font-size:1rem; }
+
+  @media (max-width: 768px) {
+    .service-box { flex: 1 1 100%; }
+  }
+
+  /* =========================
+     PRODUCTS SECTION
+     ========================= */
+  .products {
+    width: 100%;
+    max-width: 1200px;
+    padding: 3rem 2rem;
+  }
+
+  .products-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+  }
+
+  .swiper {
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .swiper-slide {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, filter 0.3s;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+  }
+
+  /* =========================
+     WHATSAPP BUTTON
+     ========================= */
+  .whatsapp-btn {
+    display: inline-block;
+    background: white;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin: 2rem 0;
+    transition: transform 0.3s;
+  }
+
+  .whatsapp-btn:hover { transform: scale(1.1); }
+
+
+  /* =========================
+     CUSTOMER REVIEWS
+     ========================= */
+  .reviews {
+    width: 100%;
+    max-width: 1200px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .reviews-title {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .review-box {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    opacity:0;
+    transform: translateY(30px);
+    animation: reviewFade 0.7s forwards;
+    animation-fill-mode: both;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+
+  .review-box:nth-child(1){ animation-delay: 0.3s;}
+  .review-box:nth-child(2){ animation-delay: 0.6s;}
+  .review-box:nth-child(3){ animation-delay: 0.9s; flex-direction: row-reverse;}
+  
+  .review-box img { width:200px; border-radius:10px; }
+
+  @keyframes reviewFade { to { opacity:1; transform: translateY(0); } }
+
+  .review-text { max-width:600px; font-size:1rem; color:#fff;}
+
+  /* =========================
+     MOBILE BACKGROUND
+     ========================= */
+  @media (max-width: 768px) {
+    body {
+      background: url('mobile-background.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+  }
+
+  /* =========================
+     DESKTOP REVIEW BIGGER
+     ========================= */
+  @media (min-width: 1025px) {
+    .review-box img { width: 300px; }
+    .review-text { font-size: 1.2rem; max-width: 800px; }
+  }
+
+  /* =========================
+     CONTACT BUTTON
+     ========================= */
+  .contact-btn {
+    display: inline-block;
+    background: white;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin: 1.5rem auto 0 auto;
+    transition: transform 0.3s;
+    text-align: center;
+  }
+
+  .contact-btn:hover { transform: scale(1.1); }
+
+  /* =========================
+     COPYRIGHT FOOTER
+     ========================= */
+  footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
