@@ -221,7 +221,7 @@
      ========================= */
   @media (max-width: 768px) {
     body {
-      background: url('mobile-background.png') no-repeat center center fixed;
+      background: url('/images/mobile-background.png') no-repeat center center fixed;
       background-size: cover;
     }
   }
